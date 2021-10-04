@@ -1,9 +1,9 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Hackney.Shared.Asset
+namespace Hackney.Shared.Asset.Domain
 {
-    public class AssetTenure
+    public class Tenure
     {
         public string Id { get; set; }
         public string PaymentReference { get; set; }

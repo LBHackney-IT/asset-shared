@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Hackney.Shared.Asset
+namespace Hackney.Shared.Asset.Domain
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum AssetType

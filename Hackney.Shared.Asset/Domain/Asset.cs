@@ -1,6 +1,6 @@
 using System;
 
-namespace Hackney.Shared.Asset
+namespace Hackney.Shared.Asset.Domain
 {
     public class Asset
     {
@@ -15,7 +15,7 @@ namespace Hackney.Shared.Asset
         public AssetAddress AssetAddress { get; set; }
         public AssetManagement AssetManagement { get; set; }
         public AssetCharacteristics AssetCharacteristics { get; set; }
-        public AssetTenure Tenure { get; set; }
+        public Tenure Tenure { get; set; }
 
         public int? VersionNumber { get; set; }
 
@@ -24,7 +24,7 @@ namespace Hackney.Shared.Asset
             string assetType,
             bool isAssetCautionaryAlerted,
             AssetAddress assetAddress,
-            AssetTenure tenure)
+            Tenure tenure)
         {
             return new Asset
             {

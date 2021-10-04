@@ -1,6 +1,6 @@
 using System;
 
-namespace Hackney.Shared.Asset
+namespace Hackney.Shared.Asset.Domain
 {
     public static class AssetHelpers
     {
