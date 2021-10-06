@@ -1,5 +1,6 @@
 using System;
 using System.Text.Json.Serialization;
+using Hackney.Shared.Tenure.Domain;
 
 namespace Hackney.Shared.Asset.Domain
 {
@@ -11,6 +12,6 @@ namespace Hackney.Shared.Asset.Domain
         public DateTime StartOfTenureDate { get; set; }
         public DateTime? EndOfTenureDate { get; set; }
         [JsonIgnore]
-        public bool IsActive => AssetHelpers.IsTenureActive(EndOfTenureDate);
+        public bool IsActive => TenureHelpers.IsTenureActive(EndOfTenureDate);
     }
 }
