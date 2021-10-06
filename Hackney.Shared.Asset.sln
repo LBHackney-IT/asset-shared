@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackney.Shared.Asset", "Hackney.Shared.Asset\Hackney.Shared.Asset.csproj", "{6137F15F-6AAE-47B6-9FF3-8E63CCAA8A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackney.Shared.Asset.Tests", "Hackney.Shared.Asset.Tests\Hackney.Shared.Asset.Tests.csproj", "{27CFAB30-AFCA-431B-8E6E-B956E195EFED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6137F15F-6AAE-47B6-9FF3-8E63CCAA8A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6137F15F-6AAE-47B6-9FF3-8E63CCAA8A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6137F15F-6AAE-47B6-9FF3-8E63CCAA8A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6137F15F-6AAE-47B6-9FF3-8E63CCAA8A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CFAB30-AFCA-431B-8E6E-B956E195EFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CFAB30-AFCA-431B-8E6E-B956E195EFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CFAB30-AFCA-431B-8E6E-B956E195EFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CFAB30-AFCA-431B-8E6E-B956E195EFED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
