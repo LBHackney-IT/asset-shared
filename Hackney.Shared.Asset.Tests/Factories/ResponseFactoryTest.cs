@@ -3,6 +3,7 @@ using Hackney.Shared.Asset.Factories;
 using AutoFixture;
 using FluentAssertions;
 using Xunit;
+using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
 
 namespace Hackney.Shared.Asset.Tests.Factories
 {
@@ -13,7 +14,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
         [Fact]
         public void CanMapANullAssetToAResponseObject()
         {
-            Asset domain = null;
+            AssetDomain domain = null;
             var response = domain.ToResponse();
 
             response.Should().BeNull();
@@ -22,7 +23,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
         [Fact]
         public void CanMapAnAssetToAResponseObject()
         {
-            var domain = _fixture.Create<Asset>();
+            var domain = _fixture.Create<AssetDomain>();
             var response = domain.ToResponse();
             domain.Should().BeEquivalentTo(response);
         }

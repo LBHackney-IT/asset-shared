@@ -4,6 +4,7 @@ using Hackney.Shared.Asset.Factories;
 using Hackney.Shared.Asset.Infrastructure;
 using FluentAssertions;
 using Xunit;
+using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
 
 namespace Hackney.Shared.Asset.Tests.Factories
 {
@@ -35,7 +36,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
         [Fact]
         public void CanMapANullAssetToAnAssetDb()
         {
-            Asset entity = null;
+            AssetDomain entity = null;
             var databaseEntity = entity.ToDatabase();
             databaseEntity.Should().BeNull();
         }
@@ -45,7 +46,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
         [InlineData(true)]
         public void CanMapAnAssetToAnAssetDb(bool nullEndDate)
         {
-            var entity = _fixture.Create<Asset>();
+            var entity = _fixture.Create<AssetDomain>();
             if (nullEndDate)
                 entity.Tenure.EndOfTenureDate = null;
 

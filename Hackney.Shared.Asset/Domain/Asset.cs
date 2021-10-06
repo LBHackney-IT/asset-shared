@@ -9,7 +9,6 @@ namespace Hackney.Shared.Asset.Domain
         public AssetType AssetType { get; set; }
         public string RootAsset { get; set; }
         public string ParentAssetIds { get; set; }
-        public bool IsAssetCautionaryAlerted { get; set; }
 
         public AssetLocation AssetLocation { get; set; }
         public AssetAddress AssetAddress { get; set; }
@@ -17,12 +16,9 @@ namespace Hackney.Shared.Asset.Domain
         public AssetCharacteristics AssetCharacteristics { get; set; }
         public AssetTenure Tenure { get; set; }
 
-        public int? VersionNumber { get; set; }
-
         public static Asset Create(string id,
             string assetId,
             string assetType,
-            bool isAssetCautionaryAlerted,
             AssetAddress assetAddress,
             AssetTenure tenure)
         {
@@ -31,7 +27,6 @@ namespace Hackney.Shared.Asset.Domain
                 Id = Guid.Parse(id),
                 AssetId = assetId,
                 AssetType = (AssetType)Enum.Parse(typeof(AssetType), assetType),
-                IsAssetCautionaryAlerted = isAssetCautionaryAlerted,
                 AssetAddress = assetAddress,
                 Tenure = tenure
             };

@@ -2,15 +2,16 @@
 
 using Hackney.Shared.Asset.Domain;
 using Hackney.Shared.Asset.Infrastructure;
+using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
 
 namespace Hackney.Shared.Asset.Factories
 {
     public static class EntityFactory
     {
-        public static Asset ToDomain(this AssetDb databaseEntity)
+        public static AssetDomain ToDomain(this AssetDb databaseEntity)
         {
             if (databaseEntity == null) return null;
-            return new Asset
+            return new AssetDomain
             {
                 Id = databaseEntity.Id,
                 AssetId = databaseEntity.AssetId,
@@ -38,7 +39,7 @@ namespace Hackney.Shared.Asset.Factories
             };
         }
 
-        public static AssetDb ToDatabase(this Asset domain)
+        public static AssetDb ToDatabase(this AssetDomain domain)
         {
             if (domain == null) return null;
             return new AssetDb

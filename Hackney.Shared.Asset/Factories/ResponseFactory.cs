@@ -1,11 +1,12 @@
 using Hackney.Shared.Asset.Boundary.Response;
 using Hackney.Shared.Asset.Domain;
+using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
 
 namespace Hackney.Shared.Asset.Factories
 {
     public static class ResponseFactory
     {
-        public static AssetResponseObject ToResponse(this Asset domain)
+        public static AssetResponseObject ToResponse(this AssetDomain domain)
         {
             if (domain == null) return null;
             return new AssetResponseObject()
