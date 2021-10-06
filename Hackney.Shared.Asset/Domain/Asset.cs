@@ -15,7 +15,7 @@ namespace Hackney.Shared.Asset.Domain
         public AssetAddress AssetAddress { get; set; }
         public AssetManagement AssetManagement { get; set; }
         public AssetCharacteristics AssetCharacteristics { get; set; }
-        public Tenure Tenure { get; set; }
+        public AssetTenure Tenure { get; set; }
 
         public int? VersionNumber { get; set; }
 
@@ -24,7 +24,7 @@ namespace Hackney.Shared.Asset.Domain
             string assetType,
             bool isAssetCautionaryAlerted,
             AssetAddress assetAddress,
-            Tenure tenure)
+            AssetTenure tenure)
         {
             return new Asset
             {

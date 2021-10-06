@@ -1,7 +1,7 @@
-namespace Hackney.Shared.Asset.Boundary.Responses.Metadata
+namespace Hackney.Shared.Asset.Boundary.Response.Metadata
 {
     /// <summary>
-    /// API Response wrapper for all API responses
+    /// API Response wrapper for all API Response
     /// If a request has been successful this will be denoted by the statusCode
     ///     Then the 'data' property will be populated
     /// If a request has not been successful denoted

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation.Results;
-using Hackney.Shared.Asset.Boundary.Responses.Metadata;
+using Hackney.Shared.Asset.Boundary.Response.Metadata;
 using Newtonsoft.Json;
 
-namespace HousingSearchApi.V1.Boundary.Responses
+namespace HousingSearchApi.V1.Boundary.Response
 {
     public class ErrorResponse
     {

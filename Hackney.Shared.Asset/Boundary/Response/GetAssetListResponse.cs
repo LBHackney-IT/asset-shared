@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Hackney.Shared.Asset.Boundary.Responses
+namespace Hackney.Shared.Asset.Boundary.Response
 {
     public class GetAssetListResponse
     {

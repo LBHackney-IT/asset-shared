@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Hackney.Shared.Asset.Boundary.Responses.Metadata
+namespace Hackney.Shared.Asset.Boundary.Response.Metadata
 {
     public class APIError
     {

@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Hackney.Shared.Asset.Domain
 {
-    public class Tenure
+    public class AssetTenure
     {
         public string Id { get; set; }
         public string PaymentReference { get; set; }
