@@ -38,5 +38,8 @@ namespace Hackney.Shared.Asset.Infrastructure
 
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectConverter<AssetTenure>))]
         public AssetTenure Tenure { get; set; }
+
+        [DynamoDBVersion]
+        public int? VersionNumber { get; set; }
     }
 }

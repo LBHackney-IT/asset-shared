@@ -22,7 +22,8 @@ namespace Hackney.Shared.Asset.Factories
                 AssetAddress = databaseEntity.AssetAddress,
                 AssetManagement = databaseEntity.AssetManagement,
                 AssetCharacteristics = databaseEntity.AssetCharacteristics,
-                Tenure = databaseEntity.Tenure
+                Tenure = databaseEntity.Tenure,
+                VersionNumber = databaseEntity.VersionNumber
             };
         }
 
@@ -53,7 +54,8 @@ namespace Hackney.Shared.Asset.Factories
                 AssetAddress = domain.AssetAddress,
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics,
-                Tenure = domain.Tenure
+                Tenure = domain.Tenure,
+                VersionNumber = domain.VersionNumber
             };
         }
 
