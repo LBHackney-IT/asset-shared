@@ -21,13 +21,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
         }
 
         [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void CanMapAnAssetDbToAnAsset(bool nullEndDate)
+        [InlineData(false, false)]
+        [InlineData(false, true)]
+        [InlineData(true, false)]
+        [InlineData(true, true)]
+        public void CanMapAnAssetDbToAnAsset(bool nullStartDate, bool nullEndDate)
         {
             var databaseEntity = _fixture.Create<AssetDb>();
-            if (nullEndDate)
-                databaseEntity.Tenure.EndOfTenureDate = null;
+
+            if (nullStartDate) databaseEntity.Tenure.StartOfTenureDate = null;
+            if (nullEndDate) databaseEntity.Tenure.EndOfTenureDate = null;
 
             var entity = databaseEntity.ToDomain();
             databaseEntity.Should().BeEquivalentTo(entity, config => config.Excluding(x => x.Tenure.IsActive));
@@ -42,13 +45,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
         }
 
         [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void CanMapAnAssetToAnAssetDb(bool nullEndDate)
+        [InlineData(false, false)]
+        [InlineData(false, true)]
+        [InlineData(true, false)]
+        [InlineData(true, true)]
+        public void CanMapAnAssetToAnAssetDb(bool nullStartDate, bool nullEndDate)
         {
             var entity = _fixture.Create<AssetDomain>();
-            if (nullEndDate)
-                entity.Tenure.EndOfTenureDate = null;
+
+            if (nullStartDate) entity.Tenure.StartOfTenureDate = null;
+            if (nullEndDate) entity.Tenure.EndOfTenureDate = null;
 
             var databaseEntity = entity.ToDatabase();
 
@@ -65,13 +71,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
         }
 
         [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void CanMapAnAssetTenureDbToAnAssetTenure(bool nullEndDate)
+        [InlineData(false, false)]
+        [InlineData(false, true)]
+        [InlineData(true, false)]
+        [InlineData(true, true)]
+        public void CanMapAnAssetTenureDbToAnAssetTenure(bool nullStartDate, bool nullEndDate)
         {
             var databaseEntity = _fixture.Create<AssetTenureDb>();
-            if (nullEndDate)
-                databaseEntity.EndOfTenureDate = null;
+
+            if (nullStartDate) databaseEntity.StartOfTenureDate = null;
+            if (nullEndDate) databaseEntity.EndOfTenureDate = null;
 
             var entity = databaseEntity.ToDomain();
             databaseEntity.Should().BeEquivalentTo(entity, config => config.Excluding(x => x.IsActive));
