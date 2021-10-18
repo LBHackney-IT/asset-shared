@@ -15,6 +15,7 @@ namespace Hackney.Shared.Asset.Domain
         public AssetManagement AssetManagement { get; set; }
         public AssetCharacteristics AssetCharacteristics { get; set; }
         public AssetTenure Tenure { get; set; }
+        public int? VersionNumber { get; set; }
 
         public static Asset Create(string id,
             string assetId,
