@@ -11,6 +11,20 @@ namespace Hackney.Shared.Asset.Domain
         LettableNonDwelling,
         MediumRiseBlock,
         NA,
-        TravellerSite
+        TravellerSite,
+        AdministrativeBuilding,
+        BoilerHouse,
+        BoosterPump,
+        CleanersFacilities,
+        CombinedHeatAndPowerUnit,
+        CommunityHall,
+        Estate,
+        HighRiseBlock,
+        Lift,
+        LowRiseBlock,
+        NBD,
+        OutBuilding,
+        TerracedBlock,
+        WalkUpBlock
     }
 }
