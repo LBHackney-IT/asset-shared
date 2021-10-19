@@ -12,7 +12,6 @@ namespace Hackney.Shared.Asset.Domain
         MediumRiseBlock,
         NA,
         TravellerSite,
-
         AdministrativeBuilding,
         BoilerHouse,
         BoosterPump,
@@ -26,6 +25,6 @@ namespace Hackney.Shared.Asset.Domain
         NBD,
         OutBuilding,
         TerracedBlock,
-        WalkUpBlock    
+        WalkUpBlock
     }
 }
