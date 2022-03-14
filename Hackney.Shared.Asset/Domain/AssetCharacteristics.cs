@@ -9,15 +9,15 @@ namespace Hackney.Shared.Asset.Domain
         public int NumberOfLivingRooms { get; set; }
         public string WindowType { get; set; }
         public string YearConstructed { get; set; }
-        public int numberOfBedSpaces { get; set; }
-        public int numberOfCots { get; set; }
-        public int showerRoomAmount { get; set; }
-        public int bathroomAmount { get; set; }
-        public string assetPropertyFolderLink { get; set; }
-        public DateTime epcExpiryDate { get; set; }
-        public DateTime fireSafetyCertificateExpiryDate { get; set; }
-        public DateTime gasSafetyCertificateExpiryDate { get; set; }
-        public DateTime elecCertificateExpiryDate { get; set; }
+        public int NumberOfBedSpaces { get; set; }
+        public int NumberOfCots { get; set; }
+        public int ShowerRoomAmount { get; set; }
+        public int BathroomAmount { get; set; }
+        public string AssetPropertyFolderLink { get; set; }
+        public DateTime? EpcExpiryDate { get; set; }
+        public DateTime? FireSafetyCertificateExpiryDate { get; set; }
+        public DateTime? GasSafetyCertificateExpiryDate { get; set; }
+        public DateTime? ElecCertificateExpiryDate { get; set; }
 
 
     }
