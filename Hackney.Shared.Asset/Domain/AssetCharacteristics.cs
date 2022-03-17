@@ -11,8 +11,8 @@ namespace Hackney.Shared.Asset.Domain
         public string YearConstructed { get; set; }
         public int NumberOfBedSpaces { get; set; }
         public int NumberOfCots { get; set; }
-        public int ShowerRoomAmount { get; set; }
-        public int BathroomAmount { get; set; }
+        public int NumberOfShowerRooms { get; set; }
+        public int NumberOfBathrooms { get; set; }
         public string AssetPropertyFolderLink { get; set; }
         public DateTime? EpcExpiryDate { get; set; }
         public DateTime? FireSafetyCertificateExpiryDate { get; set; }
