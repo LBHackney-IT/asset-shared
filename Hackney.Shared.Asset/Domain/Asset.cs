@@ -20,16 +20,24 @@ namespace Hackney.Shared.Asset.Domain
         public static Asset Create(string id,
             string assetId,
             string assetType,
+            string rootAsset,
+            string parentAssetIds,
             AssetAddress assetAddress,
-            AssetTenure tenure)
+            AssetTenure tenure,
+            AssetCharacteristics assetCharacteristics,
+            AssetManagement assetManagement)
         {
             return new Asset
             {
                 Id = Guid.Parse(id),
                 AssetId = assetId,
                 AssetType = (AssetType)Enum.Parse(typeof(AssetType), assetType),
+                RootAsset = rootAsset,
+                ParentAssetIds = parentAssetIds,
                 AssetAddress = assetAddress,
-                Tenure = tenure
+                Tenure = tenure,
+                AssetCharacteristics = assetCharacteristics,
+                AssetManagement = assetManagement
             };
         }
     }
