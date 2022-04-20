@@ -10,22 +10,36 @@ namespace Hackney.Shared.Asset.Domain
         public int NumberOfLivingRooms { get; set; }
         public string WindowType { get; set; }
         public string YearConstructed { get; set; }
-        public int NumberOfBedSpaces { get; set; }
-        public int NumberOfCots { get; set; }
         public int NumberOfShowerRooms { get; set; }
-        public int NumberOfBathrooms { get; set; }
         public string AssetPropertyFolderLink { get; set; }
-        public int BathroomType { get; set; }
-        public int KitchenType { get; set; }
-        public bool StepFreeAccess { get; set; }
-        public bool RampAccess { get; set; }
-        public List<string> SupplierInformation { get; set; }
         public DateTime? EpcExpiryDate { get; set; }
         public DateTime? FireSafetyCertificateExpiryDate { get; set; }
         public DateTime? GasSafetyCertificateExpiryDate { get; set; }
         public DateTime? ElecCertificateExpiryDate { get; set; }
-
-
+        public bool OptionToTax { get; set; }
+        public bool HasStairs { get; set; }
+        public int NumberOfStairs { get; set; }
+        public bool HasLift { get; set; }
+        public bool RampAccess { get; set; }
+        public bool CommunalAreas { get; set; }
+        public bool HasBathroom { get; set; }
+        public int NumberOfBathrooms { get; set; }
+        public string BathroomFloor { get; set; }
+        public bool HasKitchen { get; set; }
+        public int NumberOfKitchens { get; set; }
+        public string Kitchenfloor { get; set; }
+        public DateTime AlertSystemExpiryDate { get; set; }
+        public string EpcScore { get; set; }
+        public int NumberOfFloors { get; set; }
+        public string AccessibilityComments { get; set; }
+        public int NumberOfBedSpaces { get; set; }
+        public int NumberOfCots { get; set; }
+        public int SleepingArrangementNotes { get; set; }
+        public int NumberOfShowers { get; set; }
+        public string KitchenNotes { get; set; }
+        public int KitchenType { get; set; }
+        public bool StepFreeAccess { get; set; }
+        public List<string> SupplierInformation { get; set; }
     }
 }
 
