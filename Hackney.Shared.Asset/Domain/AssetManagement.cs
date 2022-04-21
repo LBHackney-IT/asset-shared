@@ -37,7 +37,7 @@ namespace Hackney.Shared.Asset.Domain
         public double RatesMonthly { get; set; }
         public string LhaArea { get; set; }
         public double LhaRate { get; set; }
-        public Enum AssetStatus { get; set; }
+        public AssetType AssetStatus { get; set; }
         public bool AvailableToTA { get; set; }
         public bool IsHackneyManaged { get; set; }
         public bool StepFree { get; set; }
