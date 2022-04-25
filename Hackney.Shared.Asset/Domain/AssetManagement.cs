@@ -39,6 +39,7 @@ namespace Hackney.Shared.Asset.Domain
         public double LhaRate { get; set; }
         public AssetType AssetStatus { get; set; }
         public bool AvailableToTA { get; set; }
+        public bool ReadyToLetDate { get; set; }
         public bool IsHackneyManaged { get; set; }
         public bool StepFree { get; set; }
         public bool PrivateBathroom { get; set; }
