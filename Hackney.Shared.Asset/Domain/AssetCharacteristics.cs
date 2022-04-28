@@ -21,10 +21,10 @@ namespace Hackney.Shared.Asset.Domain
         public int NumberOfStairs { get; set; }
         public bool HasRampAccess { get; set; }
         public bool HasCommunalAreas { get; set; }
-        public bool PrivateBathroom { get; set; }
+        public bool HasPrivateBathroom { get; set; }
         public int NumberOfBathrooms { get; set; }
         public string BathroomFloor { get; set; }
-        public bool PrivateKitchen { get; set; }
+        public bool HasPrivateKitchen { get; set; }
         public int NumberOfKitchens { get; set; }
         public string Kitchenfloor { get; set; }
         public DateTime AlertSystemExpiryDate { get; set; }
@@ -33,15 +33,12 @@ namespace Hackney.Shared.Asset.Domain
         public string AccessibilityComments { get; set; }
         public int NumberOfBedSpaces { get; set; }
         public int NumberOfCots { get; set; }
-        public int SleepingArrangementNotes { get; set; }
+        public string SleepingArrangementNotes { get; set; }
         public int NumberOfShowers { get; set; }
         public string KitchenNotes { get; set; }
         public int KitchenType { get; set; }
-        public bool StepFree { get; set; }
-        public List<string> SupplierInformation { get; set; }
         public bool IsStepFree { get; set; }
-        public bool HasPrivateBathroom { get; set; }
-        public bool HasPrivateKitchen { get; set; }
+        public List<string> SupplierInformation { get; set; }
     }
 }
 
