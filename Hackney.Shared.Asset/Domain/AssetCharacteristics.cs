@@ -19,8 +19,8 @@ namespace Hackney.Shared.Asset.Domain
         public bool OptionToTax { get; set; }
         public bool HasStairs { get; set; }
         public int NumberOfStairs { get; set; }
-        public bool RampAccess { get; set; }
-        public bool CommunalAreas { get; set; }
+        public bool HasRampAccess { get; set; }
+        public bool HasCommunalAreas { get; set; }
         public bool PrivateBathroom { get; set; }
         public int NumberOfBathrooms { get; set; }
         public string BathroomFloor { get; set; }
