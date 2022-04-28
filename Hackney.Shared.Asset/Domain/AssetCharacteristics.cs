@@ -37,7 +37,6 @@ namespace Hackney.Shared.Asset.Domain
         public int NumberOfShowers { get; set; }
         public string KitchenNotes { get; set; }
         public bool IsStepFree { get; set; }
-        public List<string> SupplierInformation { get; set; }
     }
 }
 
