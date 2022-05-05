@@ -25,6 +25,12 @@ namespace Hackney.Shared.Asset.Domain
         NBD,
         OutBuilding,
         TerracedBlock,
-        WalkUpBlock
+        WalkUpBlock,
+        StudioFlat,
+        Flat,
+        Room,
+        House,
+        SelfContainedBedsit,
+        Maisonette
     }
 }
