@@ -20,6 +20,5 @@ namespace Hackney.Shared.Asset.Domain
         public string LhaArea { get; set; }
         public bool IsTemporaryAccomodation { get; set; }
         public bool ReadyToLetDate { get; set; }
-        
     }
 }
