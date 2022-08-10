@@ -3,6 +3,8 @@ using Amazon.DynamoDBv2.DataModel;
 using Hackney.Shared.Asset.Domain;
 using Hackney.Core.DynamoDb.Converters;
 using System;
+using PatchesAndAreas.Infrastructure;
+using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Infrastructure
 {
@@ -38,6 +40,9 @@ namespace Hackney.Shared.Asset.Infrastructure
 
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectConverter<AssetTenureDb>))]
         public AssetTenureDb Tenure { get; set; }
+
+        [DynamoDBProperty(Converter = typeof(DynamoDbObjectListConverter<PatchesDb>))]
+        public List<PatchesDb> Patches { get; set; }
 
         [DynamoDBVersion]
         public int? VersionNumber { get; set; }

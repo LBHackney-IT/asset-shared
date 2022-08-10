@@ -1,4 +1,6 @@
+using PatchesAndAreas.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Domain
 {
@@ -16,6 +18,7 @@ namespace Hackney.Shared.Asset.Domain
         public AssetCharacteristics AssetCharacteristics { get; set; }
         public AssetTenure Tenure { get; set; }
         public int? VersionNumber { get; set; }
+        public List<PatchEntity> Patches { get; set; }
 
         public static Asset Create(string id,
             string assetId,
