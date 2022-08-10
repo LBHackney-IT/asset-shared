@@ -2,9 +2,9 @@
 
 using Hackney.Shared.Asset.Domain;
 using Hackney.Shared.Asset.Infrastructure;
-using PatchesAndAreas.Domain;
-using PatchesAndAreas.Factories;
-using PatchesAndAreas.Infrastructure;
+using Hackney.Shared.PatchesAndAreas.Domain;
+using Hackney.Shared.PatchesAndAreas.Factories;
+using Hackney.Shared.PatchesAndAreas.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using AssetDomain = Hackney.Shared.Asset.Domain.Asset;

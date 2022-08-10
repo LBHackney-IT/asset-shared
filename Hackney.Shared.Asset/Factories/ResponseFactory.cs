@@ -1,8 +1,8 @@
 using Hackney.Shared.Asset.Boundary.Response;
 using Hackney.Shared.Asset.Domain;
-using PatchesAndAreas.Boundary.Response;
-using PatchesAndAreas.Domain;
-using PatchesAndAreas.Factories;
+using Hackney.Shared.PatchesAndAreas.Boundary.Response;
+using Hackney.Shared.PatchesAndAreas.Domain;
+using Hackney.Shared.PatchesAndAreas.Factories;
 using System.Collections.Generic;
 using System.Linq;
 using AssetDomain = Hackney.Shared.Asset.Domain.Asset;

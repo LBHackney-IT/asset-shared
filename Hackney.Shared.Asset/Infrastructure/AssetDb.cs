@@ -3,7 +3,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Hackney.Shared.Asset.Domain;
 using Hackney.Core.DynamoDb.Converters;
 using System;
-using PatchesAndAreas.Infrastructure;
+using Hackney.Shared.PatchesAndAreas.Infrastructure;
 using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Infrastructure

@@ -1,5 +1,5 @@
 using Hackney.Shared.Asset.Domain;
-using PatchesAndAreas.Boundary.Response;
+using Hackney.Shared.PatchesAndAreas.Boundary.Response;
 using System;
 using System.Collections.Generic;
 
