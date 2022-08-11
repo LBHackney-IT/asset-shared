@@ -2,6 +2,11 @@
 
 using Hackney.Shared.Asset.Domain;
 using Hackney.Shared.Asset.Infrastructure;
+using Hackney.Shared.PatchesAndAreas.Domain;
+using Hackney.Shared.PatchesAndAreas.Factories;
+using Hackney.Shared.PatchesAndAreas.Infrastructure;
+using System.Collections.Generic;
+using System.Linq;
 using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
 
 namespace Hackney.Shared.Asset.Factories
@@ -23,7 +28,8 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = databaseEntity.AssetManagement,
                 AssetCharacteristics = databaseEntity.AssetCharacteristics,
                 Tenure = databaseEntity.Tenure.ToDomain(),
-                VersionNumber = databaseEntity.VersionNumber
+                VersionNumber = databaseEntity.VersionNumber,
+                Patches = databaseEntity.Patches.ToDomain()
             };
         }
 
@@ -38,6 +44,13 @@ namespace Hackney.Shared.Asset.Factories
                 StartOfTenureDate = databaseEntity.StartOfTenureDate,
                 EndOfTenureDate = databaseEntity.EndOfTenureDate
             };
+        }
+
+        public static List<PatchEntity> ToDomain(this IEnumerable<PatchesDb> databaseEntity)
+        {
+            return databaseEntity.Select(p => p.ToDomain())
+                     .ToList();
+
         }
 
         public static AssetDb ToDatabase(this AssetDomain domain)
@@ -55,7 +68,8 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics,
                 Tenure = domain.Tenure.ToDatabase(),
-                VersionNumber = domain.VersionNumber
+                VersionNumber = domain.VersionNumber,
+                Patches = domain.Patches.ToDatabase()
             };
         }
 
@@ -70,6 +84,14 @@ namespace Hackney.Shared.Asset.Factories
                 StartOfTenureDate = domain.StartOfTenureDate,
                 EndOfTenureDate = domain.EndOfTenureDate
             };
+        }
+
+
+        public static List<PatchesDb> ToDatabase(this IEnumerable<PatchEntity> domain)
+        {
+            return domain.Select(p => p.ToDatabase())
+                     .ToList();
+
         }
     }
 }
