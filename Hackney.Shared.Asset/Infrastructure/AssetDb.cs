@@ -42,7 +42,7 @@ namespace Hackney.Shared.Asset.Infrastructure
         public AssetTenureDb Tenure { get; set; }
 
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectListConverter<PatchesDb>))]
-        public List<PatchesDb> Patches { get; set; }
+        public List<PatchesDb?> Patches { get; set; }
 
         [DynamoDBVersion]
         public int? VersionNumber { get; set; }

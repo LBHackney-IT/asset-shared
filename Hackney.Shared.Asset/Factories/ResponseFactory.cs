@@ -26,7 +26,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics,
                 Tenure = domain.Tenure.ToResponse(),
-                Patches = domain.Patches.ToResponse()
+                Patches = domain.Patches?.ToResponse()
             };
         }
 
@@ -44,9 +44,9 @@ namespace Hackney.Shared.Asset.Factories
             };
         }
 
-        public static List<PatchesResponseObject> ToResponse(this IEnumerable<PatchEntity> domainList)
+        public static List<PatchesResponseObject?> ToResponse(this IEnumerable<PatchEntity?> domainList)
         {
-            if (null == domainList) return new List<PatchesResponseObject>();
+            if (null == domainList) return new List<PatchesResponseObject?>();
             return domainList.Select(domain => domain.ToResponse()).ToList();
         }
     }
