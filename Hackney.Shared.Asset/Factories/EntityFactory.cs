@@ -29,7 +29,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetCharacteristics = databaseEntity.AssetCharacteristics,
                 Tenure = databaseEntity.Tenure.ToDomain(),
                 VersionNumber = databaseEntity.VersionNumber,
-                Patches = databaseEntity.Patches.ToDomain()
+                Patches = databaseEntity.Patches?.ToDomain()
             };
         }
 
@@ -46,7 +46,7 @@ namespace Hackney.Shared.Asset.Factories
             };
         }
 
-        public static List<PatchEntity> ToDomain(this IEnumerable<PatchesDb> databaseEntity)
+        public static List<PatchEntity?> ToDomain(this IEnumerable<PatchesDb?> databaseEntity)
         {
             return databaseEntity.Select(p => p.ToDomain())
                      .ToList();
@@ -69,7 +69,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetCharacteristics = domain.AssetCharacteristics,
                 Tenure = domain.Tenure.ToDatabase(),
                 VersionNumber = domain.VersionNumber,
-                Patches = domain.Patches.ToDatabase()
+                Patches = domain.Patches?.ToDatabase()
             };
         }
 
@@ -87,7 +87,7 @@ namespace Hackney.Shared.Asset.Factories
         }
 
 
-        public static List<PatchesDb> ToDatabase(this IEnumerable<PatchEntity> domain)
+        public static List<PatchesDb?> ToDatabase(this IEnumerable<PatchEntity?> domain)
         {
             return domain.Select(p => p.ToDatabase())
                      .ToList();

@@ -19,7 +19,7 @@ namespace Hackney.Shared.Asset.Boundary.Response
         public AssetCharacteristics AssetCharacteristics { get; set; }
         public AssetTenureResponseObject Tenure { get; set; }
 
-        public List<PatchesResponseObject> Patches { get; set; }
+        public List<PatchesResponseObject?> Patches { get; set; }
 
     }
 }
