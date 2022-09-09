@@ -12,6 +12,7 @@ namespace Hackney.Shared.Asset.Domain
         public string RootAsset { get; set; }
         public string ParentAssetIds { get; set; }
 
+        public bool IsActive { get; set; }
         public AssetLocation AssetLocation { get; set; }
         public AssetAddress AssetAddress { get; set; }
         public AssetManagement AssetManagement { get; set; }
@@ -24,6 +25,7 @@ namespace Hackney.Shared.Asset.Domain
             string assetId,
             string assetType,
             string rootAsset,
+            bool isActive,
             string parentAssetIds,
             AssetAddress assetAddress,
             AssetTenure tenure,
@@ -36,6 +38,7 @@ namespace Hackney.Shared.Asset.Domain
                 AssetId = assetId,
                 AssetType = (AssetType)Enum.Parse(typeof(AssetType), assetType),
                 RootAsset = rootAsset,
+                IsActive = isActive,
                 ParentAssetIds = parentAssetIds,
                 AssetAddress = assetAddress,
                 Tenure = tenure,
