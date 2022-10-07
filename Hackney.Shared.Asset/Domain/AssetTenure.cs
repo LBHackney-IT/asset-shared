@@ -14,12 +14,5 @@ namespace Hackney.Shared.Asset.Domain
         public DateTime? EndOfTenureDate { get; set; }
         [JsonIgnore]
         public bool IsActive => TenureHelpers.IsTenureActive(EndOfTenureDate);
-        public List<LegacyReference> LegacyReferences { get; set; }
-        public TenureType TenureType { get; set; }
-        public string FundingSource { get; set; }
-        public int NumberOfAdultsInProperty { get; set; }
-        public int NumberOfChildrenInProperty { get; set; }
-        public bool? HasOffsiteStorage { get; set; }
-        public FurtherAccountInformation FurtherAccountInformation { get; set; }
     }
 }
