@@ -31,6 +31,8 @@ namespace Hackney.Shared.Asset.Domain
         Room,
         House,
         SelfContainedBedsit,
-        Maisonette
+        Maisonette,
+        [JsonPropertyName("New Build")]
+        NewBuild
     }
 }
