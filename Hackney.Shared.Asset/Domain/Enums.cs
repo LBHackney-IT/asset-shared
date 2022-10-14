@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace Hackney.Shared.Asset.Domain
@@ -32,7 +33,7 @@ namespace Hackney.Shared.Asset.Domain
         House,
         SelfContainedBedsit,
         Maisonette,
-        [JsonPropertyName("New Build")]
+        [EnumMember(Value = "New Build")]
         NewBuild
     }
 }
