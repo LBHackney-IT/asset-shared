@@ -28,6 +28,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetAddress = databaseEntity.AssetAddress,
                 AssetManagement = databaseEntity.AssetManagement,
                 AssetCharacteristics = databaseEntity.AssetCharacteristics,
+                AssetContract = databaseEntity.AssetContract,
                 Tenure = databaseEntity.Tenure.ToDomain(),
                 VersionNumber = databaseEntity.VersionNumber,
                 Patches = databaseEntity.Patches?.ToDomain()
@@ -69,6 +70,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetAddress = domain.AssetAddress,
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics,
+                AssetContract = domain.AssetContract,
                 Tenure = domain.Tenure.ToDatabase(),
                 VersionNumber = domain.VersionNumber,
                 Patches = domain.Patches?.ToDatabase()

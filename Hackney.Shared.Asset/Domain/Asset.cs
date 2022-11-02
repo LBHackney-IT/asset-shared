@@ -21,6 +21,7 @@ namespace Hackney.Shared.Asset.Domain
         public int? VersionNumber { get; set; }
         public List<PatchEntity?> Patches { get; set; }
 
+        public AssetContract AssetContract { get; set; }
         public static Asset Create(string id,
             string assetId,
             string assetType,

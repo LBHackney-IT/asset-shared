@@ -47,6 +47,9 @@ namespace Hackney.Shared.Asset.Infrastructure
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectListConverter<PatchesDb>))]
         public List<PatchesDb?> Patches { get; set; }
 
+        [DynamoDBProperty(Converter = typeof(DynamoDbObjectConverter<AssetContract>))]
+        public AssetContract AssetContract { get; set; }
+
         [DynamoDBVersion]
         public int? VersionNumber { get; set; }
     }

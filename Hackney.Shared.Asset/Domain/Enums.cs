@@ -36,4 +36,13 @@ namespace Hackney.Shared.Asset.Domain
         [EnumMember(Value = "New Build")]
         NewBuild
     }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum Frequency
+    {
+        Daily,
+        Weekly,
+        Monthly,
+        Yearly
+    }
 }
