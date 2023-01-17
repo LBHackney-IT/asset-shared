@@ -27,7 +27,8 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics,
                 Tenure = domain.Tenure.ToResponse(),
-                Patches = domain.Patches?.ToResponse()
+                Patches = domain.Patches?.ToResponse(),
+                VersionNumber = domain.VersionNumber
             };
         }
 
