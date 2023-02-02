@@ -1,7 +1,4 @@
 ﻿using Hackney.Shared.Asset.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Hackney.Shared.Asset.Boundary.Request
 {
@@ -17,6 +14,6 @@ namespace Hackney.Shared.Asset.Boundary.Request
         public AssetManagement AssetManagement { get; set; }
 
         public AssetCharacteristics AssetCharacteristics { get; set; }
-
+        public AssetAddress AssetAddress { get; set; }
     }
 }
