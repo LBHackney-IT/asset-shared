@@ -25,7 +25,7 @@ namespace Hackney.Shared.Asset.Domain
         public bool HasPrivateKitchen { get; set; }
         public int NumberOfKitchens { get; set; }
         public string Kitchenfloor { get; set; }
-        public DateTime AlertSystemExpiryDate { get; set; }
+        public DateTime? AlertSystemExpiryDate { get; set; }
         public string EpcScore { get; set; }
         public int NumberOfFloors { get; set; }
         public string AccessibilityComments { get; set; }
