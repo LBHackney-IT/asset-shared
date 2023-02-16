@@ -14,7 +14,6 @@ namespace Hackney.Shared.Asset.Domain
         public DateTime? FireSafetyCertificateExpiryDate { get; set; }
         public DateTime? GasSafetyCertificateExpiryDate { get; set; }
         public DateTime? ElecCertificateExpiryDate { get; set; }
-        public bool OptionToTax { get; set; }
         public bool HasStairs { get; set; }
         public int NumberOfStairs { get; set; }
         public bool HasRampAccess { get; set; }
