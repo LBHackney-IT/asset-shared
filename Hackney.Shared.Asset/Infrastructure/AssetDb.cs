@@ -24,7 +24,7 @@ namespace Hackney.Shared.Asset.Infrastructure
         public string RootAsset { get; set; }
 
         [DynamoDBProperty]
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         [DynamoDBProperty]
         public string ParentAssetIds { get; set; }
