@@ -13,7 +13,7 @@
  
  <ItemGroup>
    <PackageReference Include="FluentValidation" Version="10.3.3" />
-   <PackageReference Include="Hackney.Core.DynamoDb" Version="1.30.0" />
+   <PackageReference Include="Hackney.Core.DynamoDb" Version="1.79.0" />
    <PackageReference Include="Hackney.Shared.PatchesAndAreas" Version="0.7.0" />
    <PackageReference Include="Hackney.Shared.Tenure" Version="0.14.0" />
    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
