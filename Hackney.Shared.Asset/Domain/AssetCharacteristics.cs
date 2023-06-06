@@ -5,6 +5,8 @@ namespace Hackney.Shared.Asset.Domain
     public class AssetCharacteristics
     {
         public int? NumberOfBedrooms { get; set; }
+        public int? NumberOfSingleBeds { get; set; }
+        public int? NumberOfDoubleBeds { get; set; }
         public int? NumberOfLifts { get; set; }
         public int? NumberOfLivingRooms { get; set; }
         public string WindowType { get; set; }
@@ -27,6 +29,9 @@ namespace Hackney.Shared.Asset.Domain
         public DateTime? AlertSystemExpiryDate { get; set; }
         public string EpcScore { get; set; }
         public int? NumberOfFloors { get; set; }
+        public string Heating { get; set; } 
+        public float? PropertyFactor { get; set; }
+        public string ArchitecturalType { get; set; }
         public string AccessibilityComments { get; set; }
         public int? NumberOfBedSpaces { get; set; }
         public int? NumberOfCots { get; set; }
@@ -38,4 +43,3 @@ namespace Hackney.Shared.Asset.Domain
         public string LivingRoomNotes { get; set; }
     }
 }
-
