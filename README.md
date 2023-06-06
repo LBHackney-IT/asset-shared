@@ -8,6 +8,16 @@ For full details on how to use the package(s) within this repository please read
 
 ## Contributing
 
+### Running Tests Locally
+1. Create the `.env` file based on the `.env.sample` and then populate the values for the variable names listed there. To create the `.env` run:
+    ``` sh
+    cp .env.sample .env
+    ```
+2. Run the tests by running:
+    ``` sh
+    make test
+    ```
+
 ### Automated Versioning
 The pipeline automatically updates the package version number.
 
