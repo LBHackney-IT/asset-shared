@@ -29,7 +29,7 @@ namespace Hackney.Shared.Asset.Infrastructure
         public DateTime? AlertSystemExpiryDate { get; set; }
         public string EpcScore { get; set; }
         public int? NumberOfFloors { get; set; }
-        public string Heating { get; set; } 
+        public string Heating { get; set; }
         public float? PropertyFactor { get; set; }
         public string ArchitecturalType { get; set; }
         public string AccessibilityComments { get; set; }

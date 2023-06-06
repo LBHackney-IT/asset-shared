@@ -63,7 +63,7 @@ namespace Hackney.Shared.Asset.Factories
                 AlertSystemExpiryDate = domainEntity.AlertSystemExpiryDate,
                 EpcScore = domainEntity.EpcScore,
                 NumberOfFloors = domainEntity.NumberOfFloors,
-                Heating = domainEntity.Heating, 
+                Heating = domainEntity.Heating,
                 PropertyFactor = domainEntity.PropertyFactor,
                 ArchitecturalType = domainEntity.ArchitecturalType,
                 AccessibilityComments = domainEntity.AccessibilityComments,
