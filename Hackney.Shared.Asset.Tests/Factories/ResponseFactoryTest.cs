@@ -47,8 +47,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
         }
 
         #region Asset Characteristics
-        private void StrictAssertDomainToPresentationAssetCharacteristicsMapping(AssetCharacteristics domainAC, AssetCharacteristicsResponse presentationAC)
+        [Fact]
+        public void AssetCharacteristicsMapsFromDomainToDatabase()
         {
+            // arrange
+            var domainAC = _fixture.Create<AssetCharacteristics>();
+
+            // act
+            var presentationAC = domainAC.ToResponse();
+
+            // assert
             presentationAC.NumberOfBedrooms.Should().Be(domainAC.NumberOfBedrooms);
             presentationAC.NumberOfSingleBeds.Should().Be(domainAC.NumberOfSingleBeds);
             presentationAC.NumberOfDoubleBeds.Should().Be(domainAC.NumberOfDoubleBeds);
@@ -86,19 +94,6 @@ namespace Hackney.Shared.Asset.Tests.Factories
             presentationAC.IsStepFree.Should().Be(domainAC.IsStepFree);
             presentationAC.BathroomNotes.Should().Be(domainAC.BathroomNotes);
             presentationAC.LivingRoomNotes.Should().Be(domainAC.LivingRoomNotes);
-        }
-
-        [Fact]
-        public void AssetCharacteristicsMapsFromDomainToDatabase()
-        {
-            // arrange
-            var domainAC = _fixture.Create<AssetCharacteristics>();
-
-            // act
-            var presentationAC = domainAC.ToResponse();
-
-            // assert
-            StrictAssertDomainToPresentationAssetCharacteristicsMapping(domainAC, presentationAC);
         }
 
         [Fact]

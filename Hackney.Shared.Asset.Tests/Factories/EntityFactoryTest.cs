@@ -109,8 +109,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
         }
 
         #region Asset Characteristics
-        private void StrictAssertDatabaseToDomainAssetCharacteristicMapping(AssetCharacteristicsDb databaseAC, AssetCharacteristics domainAC)
+        [Fact]
+        public void AssetCharacteristicsMapsFromDatabaseToDomain()
         {
+            // arrange
+            var databaseAC = _fixture.Create<AssetCharacteristicsDb>();
+
+            // act
+            var domainAC = databaseAC.ToDomain();
+
+            // assert
             domainAC.NumberOfBedrooms.Should().Be(databaseAC.NumberOfBedrooms);
             domainAC.NumberOfSingleBeds.Should().Be(databaseAC.NumberOfSingleBeds);
             domainAC.NumberOfDoubleBeds.Should().Be(databaseAC.NumberOfDoubleBeds);
@@ -150,9 +158,16 @@ namespace Hackney.Shared.Asset.Tests.Factories
             domainAC.LivingRoomNotes.Should().Be(databaseAC.LivingRoomNotes);
         }
 
-        // These assertions are the same now, but in general case they won't be (Calculated fields, Excluded fields, etc).
-        private void StrictAssertDomainToDatabaseAssetCharacteristicMapping(AssetCharacteristics domainAC, AssetCharacteristicsDb databaseAC)
+        [Fact]
+        public void AssetCharacteristicsMapsFromDomainToDatabase()
         {
+            // arrange
+            var domainAC = _fixture.Create<AssetCharacteristics>();
+
+            // act
+            var databaseAC = domainAC.ToDatabase();
+
+            // assert
             databaseAC.NumberOfBedrooms.Should().Be(domainAC.NumberOfBedrooms);
             databaseAC.NumberOfSingleBeds.Should().Be(domainAC.NumberOfSingleBeds);
             databaseAC.NumberOfDoubleBeds.Should().Be(domainAC.NumberOfDoubleBeds);
@@ -190,32 +205,6 @@ namespace Hackney.Shared.Asset.Tests.Factories
             databaseAC.IsStepFree.Should().Be(domainAC.IsStepFree);
             databaseAC.BathroomNotes.Should().Be(domainAC.BathroomNotes);
             databaseAC.LivingRoomNotes.Should().Be(domainAC.LivingRoomNotes);
-        }
-
-        [Fact]
-        public void AssetCharacteristicsMapsFromDatabaseToDomain()
-        {
-            // arrange
-            var databaseAC = _fixture.Create<AssetCharacteristicsDb>();
-
-            // act
-            var domainAC = databaseAC.ToDomain();
-
-            // assert
-            StrictAssertDatabaseToDomainAssetCharacteristicMapping(databaseAC, domainAC);
-        }
-
-        [Fact]
-        public void AssetCharacteristicsMapsFromDomainToDatabase()
-        {
-            // arrange
-            var domainAC = _fixture.Create<AssetCharacteristics>();
-
-            // act
-            var databaseAC = domainAC.ToDatabase();
-
-            // assert
-            StrictAssertDomainToDatabaseAssetCharacteristicMapping(domainAC, databaseAC);
         }
 
         [Fact]
