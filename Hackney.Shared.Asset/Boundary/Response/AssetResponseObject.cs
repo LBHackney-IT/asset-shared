@@ -16,7 +16,7 @@ namespace Hackney.Shared.Asset.Boundary.Response
         public AssetLocation AssetLocation { get; set; }
         public AssetAddress AssetAddress { get; set; }
         public AssetManagement AssetManagement { get; set; }
-        public AssetCharacteristics AssetCharacteristics { get; set; }
+        public AssetCharacteristicsResponse AssetCharacteristics { get; set; }
         public AssetTenureResponseObject Tenure { get; set; }
         public List<PatchesResponseObject?> Patches { get; set; }
         public int? VersionNumber { get; set; }
