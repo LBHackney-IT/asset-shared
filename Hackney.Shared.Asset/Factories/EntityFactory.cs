@@ -27,12 +27,106 @@ namespace Hackney.Shared.Asset.Factories
                 AssetLocation = databaseEntity.AssetLocation,
                 AssetAddress = databaseEntity.AssetAddress,
                 AssetManagement = databaseEntity.AssetManagement,
-                AssetCharacteristics = databaseEntity.AssetCharacteristics,
+                AssetCharacteristics = databaseEntity.AssetCharacteristics.ToDomain(),
                 Tenure = databaseEntity.Tenure.ToDomain(),
                 VersionNumber = databaseEntity.VersionNumber,
                 Patches = databaseEntity.Patches?.ToDomain()
             };
         }
+
+        # region Asset Characteristics
+        public static AssetCharacteristics ToDomain(this AssetCharacteristicsDb databaseEntity)
+        {
+            if (databaseEntity is null) return null;
+
+            return new AssetCharacteristics
+            {
+                NumberOfBedrooms = databaseEntity.NumberOfBedrooms,
+                NumberOfSingleBeds = databaseEntity.NumberOfSingleBeds,
+                NumberOfDoubleBeds = databaseEntity.NumberOfDoubleBeds,
+                NumberOfLifts = databaseEntity.NumberOfLifts,
+                NumberOfLivingRooms = databaseEntity.NumberOfLivingRooms,
+                WindowType = databaseEntity.WindowType,
+                YearConstructed = databaseEntity.YearConstructed,
+                AssetPropertyFolderLink = databaseEntity.AssetPropertyFolderLink,
+                EpcExpiryDate = databaseEntity.EpcExpiryDate,
+                FireSafetyCertificateExpiryDate = databaseEntity.FireSafetyCertificateExpiryDate,
+                GasSafetyCertificateExpiryDate = databaseEntity.GasSafetyCertificateExpiryDate,
+                ElecCertificateExpiryDate = databaseEntity.ElecCertificateExpiryDate,
+                HasStairs = databaseEntity.HasStairs,
+                NumberOfStairs = databaseEntity.NumberOfStairs,
+                HasRampAccess = databaseEntity.HasRampAccess,
+                HasCommunalAreas = databaseEntity.HasCommunalAreas,
+                HasPrivateBathroom = databaseEntity.HasPrivateBathroom,
+                NumberOfBathrooms = databaseEntity.NumberOfBathrooms,
+                BathroomFloor = databaseEntity.BathroomFloor,
+                HasPrivateKitchen = databaseEntity.HasPrivateKitchen,
+                NumberOfKitchens = databaseEntity.NumberOfKitchens,
+                Kitchenfloor = databaseEntity.Kitchenfloor,
+                AlertSystemExpiryDate = databaseEntity.AlertSystemExpiryDate,
+                EpcScore = databaseEntity.EpcScore,
+                NumberOfFloors = databaseEntity.NumberOfFloors,
+                Heating = databaseEntity.Heating, 
+                PropertyFactor = databaseEntity.PropertyFactor,
+                ArchitecturalType = databaseEntity.ArchitecturalType,
+                AccessibilityComments = databaseEntity.AccessibilityComments,
+                NumberOfBedSpaces = databaseEntity.NumberOfBedSpaces,
+                NumberOfCots = databaseEntity.NumberOfCots,
+                SleepingArrangementNotes = databaseEntity.SleepingArrangementNotes,
+                NumberOfShowers = databaseEntity.NumberOfShowers,
+                KitchenNotes = databaseEntity.KitchenNotes,
+                IsStepFree = databaseEntity.IsStepFree,
+                BathroomNotes = databaseEntity.BathroomNotes,
+                LivingRoomNotes = databaseEntity.LivingRoomNotes
+            };
+        }
+
+        public static AssetCharacteristicsDb ToDatabase(this AssetCharacteristics domainEntity)
+        {
+            if (domainEntity is null) return null;
+
+            return new AssetCharacteristicsDb
+            {
+                NumberOfBedrooms = domainEntity.NumberOfBedrooms,
+                NumberOfSingleBeds = domainEntity.NumberOfSingleBeds,
+                NumberOfDoubleBeds = domainEntity.NumberOfDoubleBeds,
+                NumberOfLifts = domainEntity.NumberOfLifts,
+                NumberOfLivingRooms = domainEntity.NumberOfLivingRooms,
+                WindowType = domainEntity.WindowType,
+                YearConstructed = domainEntity.YearConstructed,
+                AssetPropertyFolderLink = domainEntity.AssetPropertyFolderLink,
+                EpcExpiryDate = domainEntity.EpcExpiryDate,
+                FireSafetyCertificateExpiryDate = domainEntity.FireSafetyCertificateExpiryDate,
+                GasSafetyCertificateExpiryDate = domainEntity.GasSafetyCertificateExpiryDate,
+                ElecCertificateExpiryDate = domainEntity.ElecCertificateExpiryDate,
+                HasStairs = domainEntity.HasStairs,
+                NumberOfStairs = domainEntity.NumberOfStairs,
+                HasRampAccess = domainEntity.HasRampAccess,
+                HasCommunalAreas = domainEntity.HasCommunalAreas,
+                HasPrivateBathroom = domainEntity.HasPrivateBathroom,
+                NumberOfBathrooms = domainEntity.NumberOfBathrooms,
+                BathroomFloor = domainEntity.BathroomFloor,
+                HasPrivateKitchen = domainEntity.HasPrivateKitchen,
+                NumberOfKitchens = domainEntity.NumberOfKitchens,
+                Kitchenfloor = domainEntity.Kitchenfloor,
+                AlertSystemExpiryDate = domainEntity.AlertSystemExpiryDate,
+                EpcScore = domainEntity.EpcScore,
+                NumberOfFloors = domainEntity.NumberOfFloors,
+                Heating = domainEntity.Heating, 
+                PropertyFactor = domainEntity.PropertyFactor,
+                ArchitecturalType = domainEntity.ArchitecturalType,
+                AccessibilityComments = domainEntity.AccessibilityComments,
+                NumberOfBedSpaces = domainEntity.NumberOfBedSpaces,
+                NumberOfCots = domainEntity.NumberOfCots,
+                SleepingArrangementNotes = domainEntity.SleepingArrangementNotes,
+                NumberOfShowers = domainEntity.NumberOfShowers,
+                KitchenNotes = domainEntity.KitchenNotes,
+                IsStepFree = domainEntity.IsStepFree,
+                BathroomNotes = domainEntity.BathroomNotes,
+                LivingRoomNotes = domainEntity.LivingRoomNotes
+            };
+        }
+        #endregion
 
         public static AssetTenure ToDomain(this AssetTenureDb databaseEntity)
         {
@@ -68,7 +162,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetLocation = domain.AssetLocation,
                 AssetAddress = domain.AssetAddress,
                 AssetManagement = domain.AssetManagement,
-                AssetCharacteristics = domain.AssetCharacteristics,
+                AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
                 Tenure = domain.Tenure.ToDatabase(),
                 VersionNumber = domain.VersionNumber,
                 Patches = domain.Patches?.ToDatabase()
