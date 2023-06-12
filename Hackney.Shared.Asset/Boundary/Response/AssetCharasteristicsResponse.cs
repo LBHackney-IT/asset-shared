@@ -1,8 +1,8 @@
 using System;
 
-namespace Hackney.Shared.Asset.Domain
+namespace Hackney.Shared.Asset.Boundary.Response
 {
-    public class AssetCharacteristics
+    public class AssetCharacteristicsResponse
     {
         public int? NumberOfBedrooms { get; set; }
         public int? NumberOfSingleBeds { get; set; }
