@@ -9,6 +9,7 @@ namespace Hackney.Shared.Asset.Domain
         public Guid Id { get; set; }
         public string AssetId { get; set; }
         public AssetType AssetType { get; set; }
+        public RentGroup? RentGroup { get; set; }
         public string RootAsset { get; set; }
         public string ParentAssetIds { get; set; }
 

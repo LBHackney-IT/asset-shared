@@ -19,6 +19,7 @@ namespace Hackney.Shared.Asset.Factories
                 Id = domain.Id,
                 AssetId = domain.AssetId,
                 AssetType = domain.AssetType,
+                RentGroup = domain.RentGroup,
                 RootAsset = domain.RootAsset,
                 IsActive = domain.IsActive,
                 ParentAssetIds = domain.ParentAssetIds,

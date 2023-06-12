@@ -36,4 +36,17 @@ namespace Hackney.Shared.Asset.Domain
         [EnumMember(Value = "New Build")]
         NewBuild
     }
+
+    public enum RentGroup
+    {
+        GPS,
+        HGF,
+        HRA,
+        LMW,
+        LSC,
+        RSL,
+        TAG,
+        TAH,
+        TRA
+    }
 }

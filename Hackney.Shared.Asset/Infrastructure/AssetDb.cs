@@ -20,6 +20,9 @@ namespace Hackney.Shared.Asset.Infrastructure
         [DynamoDBProperty(Converter = typeof(DynamoDbEnumConverter<AssetType>))]
         public AssetType AssetType { get; set; }
 
+        [DynamoDBProperty(Converter = typeof(DynamoDbEnumConverter<RentGroup>))]
+        public RentGroup? RentGroup { get; set; }
+
         [DynamoDBProperty]
         public string RootAsset { get; set; }
 
