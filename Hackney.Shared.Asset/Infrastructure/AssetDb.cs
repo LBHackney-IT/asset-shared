@@ -32,6 +32,9 @@ namespace Hackney.Shared.Asset.Infrastructure
         [DynamoDBProperty]
         public string ParentAssetIds { get; set; }
 
+        [DynamoDBProperty]
+        public string BoilerHouseId { get; set; }
+
         [DynamoDBProperty(Converter = typeof(DynamoDbObjectConverter<AssetLocation>))]
         public AssetLocation AssetLocation { get; set; }
 

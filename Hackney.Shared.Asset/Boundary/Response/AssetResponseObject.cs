@@ -14,6 +14,7 @@ namespace Hackney.Shared.Asset.Boundary.Response
         public string RootAsset { get; set; }
         public bool IsActive { get; set; }
         public string ParentAssetIds { get; set; }
+        public string BoilerHouseId { get; set; }
         public AssetLocation AssetLocation { get; set; }
         public AssetAddress AssetAddress { get; set; }
         public AssetManagement AssetManagement { get; set; }
