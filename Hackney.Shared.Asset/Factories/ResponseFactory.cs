@@ -23,6 +23,7 @@ namespace Hackney.Shared.Asset.Factories
                 RootAsset = domain.RootAsset,
                 IsActive = domain.IsActive,
                 ParentAssetIds = domain.ParentAssetIds,
+                BoilerHouseId = domain.BoilerHouseId,
                 AssetLocation = domain.AssetLocation,
                 AssetAddress = domain.AssetAddress,
                 AssetManagement = domain.AssetManagement,
