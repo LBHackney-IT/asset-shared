@@ -37,6 +37,7 @@ namespace Hackney.Shared.Asset.Domain
         NewBuild
     }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RentGroup
     {
         GPS,
