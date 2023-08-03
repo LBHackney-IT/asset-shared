@@ -17,10 +17,6 @@ namespace Hackney.Shared.Asset.Boundary.Request.Validation
             RuleFor(x => x.AssetAddress).NotXssString()
                                         .WithErrorCode(ErrorCodes.XssFailure);
 
-            RuleFor(x => x.AssetAddress.Uprn).NotNull()
-                                             .NotEmpty()
-                                             .WithErrorCode(ErrorCodes.AssetAddressUprnEmptyOrInvalid);
-
             RuleFor(x => x.AssetAddress.Uprn).NotXssString()
                                              .WithErrorCode(ErrorCodes.XssFailure);
 
