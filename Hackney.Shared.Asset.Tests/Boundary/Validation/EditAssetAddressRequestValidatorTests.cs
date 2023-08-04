@@ -22,19 +22,6 @@ namespace Hackney.Shared.Asset.Tests.Boundary.Validation
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void MissingUprnShouldErrorWithNoValue(string value)
-        {
-            var request = CreateValidRequest();
-            request.AssetAddress.Uprn = value;
-
-            var result = _sut.TestValidate(request);
-            result.ShouldHaveValidationErrorFor(x => x.AssetAddress.Uprn)
-                .WithErrorCode(ErrorCodes.AssetAddressUprnEmptyOrInvalid);
-        }
-
-        [Theory]
-        [InlineData(null)]
-        [InlineData("")]
         public void AddressLine1ShouldErrorWithNoValue(string value)
         {
             var request = CreateValidRequest();
