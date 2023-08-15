@@ -1,12 +1,9 @@
-using Hackney.Shared.Asset.Serialization;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace Hackney.Shared.Asset.Domain
 {
-    // If you add/modify any enum value, you must update this library in every project.
-    // Otherwise, the new value will default to NotFound
-    [Newtonsoft.Json.JsonConverter(typeof(SafeStringEnumConverter), NotFound)]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum AssetType
     {
         Block,
