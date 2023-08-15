@@ -1,9 +1,12 @@
+using Hackney.Shared.Asset.Serialization;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace Hackney.Shared.Asset.Domain
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    // If you add/modify any enum value, you must update this library in every project.
+    // Otherwise, the new value will default to NotFound
+    [Newtonsoft.Json.JsonConverter(typeof(SafeStringEnumConverter), NotFound)]
     public enum AssetType
     {
         Block,
@@ -34,7 +37,8 @@ namespace Hackney.Shared.Asset.Domain
         SelfContainedBedsit,
         Maisonette,
         [EnumMember(Value = "New Build")]
-        NewBuild
+        NewBuild,
+        NotFound
     }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
