@@ -4,6 +4,7 @@ using System;
 
 namespace Hackney.Shared.Asset.Serialization
 {
+    // You must update this library in every project, otherwise you will not detect new enum values
     public class SafeStringEnumConverter : StringEnumConverter
     {
         public object DefaultValue { get; }
