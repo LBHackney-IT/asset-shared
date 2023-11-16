@@ -16,6 +16,12 @@ namespace Hackney.Shared.Asset.Infrastructure
         [DynamoDBProperty]
         public string AssetId { get; set; }
 
+        [DynamoDBProperty]
+        public Guid? AreaId { get; set; }
+
+        [DynamoDBProperty]
+        public Guid? PatchId { get; set; }
+
         [DynamoDBProperty(Converter = typeof(DynamoDbEnumConverter<AssetType>))]
         public AssetType AssetType { get; set; }
 

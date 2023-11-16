@@ -17,6 +17,8 @@ namespace Hackney.Shared.Asset.Factories
             {
                 Id = databaseEntity.Id,
                 AssetId = databaseEntity.AssetId,
+                AreaId = databaseEntity.AreaId,
+                PatchId = databaseEntity.PatchId,
                 AssetType = databaseEntity.AssetType,
                 RentGroup = databaseEntity.RentGroup,
                 RootAsset = databaseEntity.RootAsset,
@@ -29,6 +31,30 @@ namespace Hackney.Shared.Asset.Factories
                 AssetCharacteristics = databaseEntity.AssetCharacteristics.ToDomain(),
                 Tenure = databaseEntity.Tenure.ToDomain(),
                 VersionNumber = databaseEntity.VersionNumber
+            };
+        }
+
+        public static AssetDb ToDatabase(this AssetDomain domain)
+        {
+            if (domain == null) return null;
+            return new AssetDb
+            {
+                Id = domain.Id,
+                AssetId = domain.AssetId,
+                AreaId = domain.AreaId,
+                PatchId = domain.PatchId,
+                AssetType = domain.AssetType,
+                RentGroup = domain.RentGroup,
+                RootAsset = domain.RootAsset,
+                IsActive = domain.IsActive,
+                ParentAssetIds = domain.ParentAssetIds,
+                BoilerHouseId = domain.BoilerHouseId,
+                AssetLocation = domain.AssetLocation,
+                AssetAddress = domain.AssetAddress,
+                AssetManagement = domain.AssetManagement,
+                AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
+                Tenure = domain.Tenure.ToDatabase(),
+                VersionNumber = domain.VersionNumber,
             };
         }
 
@@ -136,28 +162,6 @@ namespace Hackney.Shared.Asset.Factories
                 PaymentReference = databaseEntity.PaymentReference,
                 StartOfTenureDate = databaseEntity.StartOfTenureDate,
                 EndOfTenureDate = databaseEntity.EndOfTenureDate
-            };
-        }
-
-        public static AssetDb ToDatabase(this AssetDomain domain)
-        {
-            if (domain == null) return null;
-            return new AssetDb
-            {
-                Id = domain.Id,
-                AssetId = domain.AssetId,
-                AssetType = domain.AssetType,
-                RentGroup = domain.RentGroup,
-                RootAsset = domain.RootAsset,
-                IsActive = domain.IsActive,
-                ParentAssetIds = domain.ParentAssetIds,
-                BoilerHouseId = domain.BoilerHouseId,
-                AssetLocation = domain.AssetLocation,
-                AssetAddress = domain.AssetAddress,
-                AssetManagement = domain.AssetManagement,
-                AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
-                Tenure = domain.Tenure.ToDatabase(),
-                VersionNumber = domain.VersionNumber,
             };
         }
 
