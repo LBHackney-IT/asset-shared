@@ -1,7 +1,5 @@
 using Hackney.Shared.Asset.Domain;
-using Hackney.Shared.PatchesAndAreas.Boundary.Response;
 using System;
-using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Boundary.Response
 {
@@ -20,7 +18,6 @@ namespace Hackney.Shared.Asset.Boundary.Response
         public AssetManagement AssetManagement { get; set; }
         public AssetCharacteristicsResponse AssetCharacteristics { get; set; }
         public AssetTenureResponseObject Tenure { get; set; }
-        public List<PatchesResponseObject?> Patches { get; set; }
         public int? VersionNumber { get; set; }
     }
 }

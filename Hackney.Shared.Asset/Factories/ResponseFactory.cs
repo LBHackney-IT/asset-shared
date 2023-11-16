@@ -1,8 +1,5 @@
 using Hackney.Shared.Asset.Boundary.Response;
 using Hackney.Shared.Asset.Domain;
-using Hackney.Shared.PatchesAndAreas.Boundary.Response;
-using Hackney.Shared.PatchesAndAreas.Domain;
-using Hackney.Shared.PatchesAndAreas.Factories;
 using System.Collections.Generic;
 using System.Linq;
 using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
@@ -29,7 +26,6 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics.ToResponse(),
                 Tenure = domain.Tenure.ToResponse(),
-                Patches = domain.Patches?.ToResponse(),
                 VersionNumber = domain.VersionNumber
             };
         }
@@ -92,12 +88,6 @@ namespace Hackney.Shared.Asset.Factories
                 EndOfTenureDate = domain.EndOfTenureDate,
                 IsActive = domain.IsActive
             };
-        }
-
-        public static List<PatchesResponseObject?> ToResponse(this IEnumerable<PatchEntity?> domainList)
-        {
-            if (null == domainList) return new List<PatchesResponseObject?>();
-            return domainList.Select(domain => domain.ToResponse()).ToList();
         }
     }
 }
