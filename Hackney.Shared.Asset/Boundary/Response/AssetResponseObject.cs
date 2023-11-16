@@ -1,7 +1,5 @@
 using Hackney.Shared.Asset.Domain;
-using Hackney.Shared.PatchesAndAreas.Boundary.Response;
 using System;
-using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Boundary.Response
 {
@@ -9,6 +7,8 @@ namespace Hackney.Shared.Asset.Boundary.Response
     {
         public Guid Id { get; set; }
         public string AssetId { get; set; }
+        public Guid? AreaId { get; set; }
+        public Guid? PatchId { get; set; }
         public AssetType AssetType { get; set; }
         public RentGroup? RentGroup { get; set; }
         public string RootAsset { get; set; }
@@ -20,7 +20,6 @@ namespace Hackney.Shared.Asset.Boundary.Response
         public AssetManagement AssetManagement { get; set; }
         public AssetCharacteristicsResponse AssetCharacteristics { get; set; }
         public AssetTenureResponseObject Tenure { get; set; }
-        public List<PatchesResponseObject?> Patches { get; set; }
         public int? VersionNumber { get; set; }
     }
 }

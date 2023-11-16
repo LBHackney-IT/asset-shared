@@ -2,9 +2,6 @@
 
 using Hackney.Shared.Asset.Domain;
 using Hackney.Shared.Asset.Infrastructure;
-using Hackney.Shared.PatchesAndAreas.Domain;
-using Hackney.Shared.PatchesAndAreas.Factories;
-using Hackney.Shared.PatchesAndAreas.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using AssetDomain = Hackney.Shared.Asset.Domain.Asset;
@@ -20,6 +17,8 @@ namespace Hackney.Shared.Asset.Factories
             {
                 Id = databaseEntity.Id,
                 AssetId = databaseEntity.AssetId,
+                AreaId = databaseEntity.AreaId,
+                PatchId = databaseEntity.PatchId,
                 AssetType = databaseEntity.AssetType,
                 RentGroup = databaseEntity.RentGroup,
                 RootAsset = databaseEntity.RootAsset,
@@ -31,8 +30,31 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = databaseEntity.AssetManagement,
                 AssetCharacteristics = databaseEntity.AssetCharacteristics.ToDomain(),
                 Tenure = databaseEntity.Tenure.ToDomain(),
-                VersionNumber = databaseEntity.VersionNumber,
-                Patches = databaseEntity.Patches?.ToDomain()
+                VersionNumber = databaseEntity.VersionNumber
+            };
+        }
+
+        public static AssetDb ToDatabase(this AssetDomain domain)
+        {
+            if (domain == null) return null;
+            return new AssetDb
+            {
+                Id = domain.Id,
+                AssetId = domain.AssetId,
+                AreaId = domain.AreaId,
+                PatchId = domain.PatchId,
+                AssetType = domain.AssetType,
+                RentGroup = domain.RentGroup,
+                RootAsset = domain.RootAsset,
+                IsActive = domain.IsActive,
+                ParentAssetIds = domain.ParentAssetIds,
+                BoilerHouseId = domain.BoilerHouseId,
+                AssetLocation = domain.AssetLocation,
+                AssetAddress = domain.AssetAddress,
+                AssetManagement = domain.AssetManagement,
+                AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
+                Tenure = domain.Tenure.ToDatabase(),
+                VersionNumber = domain.VersionNumber,
             };
         }
 
@@ -143,36 +165,6 @@ namespace Hackney.Shared.Asset.Factories
             };
         }
 
-        public static List<PatchEntity?> ToDomain(this IEnumerable<PatchesDb?> databaseEntity)
-        {
-            return databaseEntity.Select(p => p.ToDomain())
-                     .ToList();
-
-        }
-
-        public static AssetDb ToDatabase(this AssetDomain domain)
-        {
-            if (domain == null) return null;
-            return new AssetDb
-            {
-                Id = domain.Id,
-                AssetId = domain.AssetId,
-                AssetType = domain.AssetType,
-                RentGroup = domain.RentGroup,
-                RootAsset = domain.RootAsset,
-                IsActive = domain.IsActive,
-                ParentAssetIds = domain.ParentAssetIds,
-                BoilerHouseId = domain.BoilerHouseId,
-                AssetLocation = domain.AssetLocation,
-                AssetAddress = domain.AssetAddress,
-                AssetManagement = domain.AssetManagement,
-                AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
-                Tenure = domain.Tenure.ToDatabase(),
-                VersionNumber = domain.VersionNumber,
-                Patches = domain.Patches?.ToDatabase()
-            };
-        }
-
         public static AssetTenureDb ToDatabase(this AssetTenure domain)
         {
             if (domain == null) return null;
@@ -186,12 +178,5 @@ namespace Hackney.Shared.Asset.Factories
             };
         }
 
-
-        public static List<PatchesDb?> ToDatabase(this IEnumerable<PatchEntity?> domain)
-        {
-            return domain.Select(p => p.ToDatabase())
-                     .ToList();
-
-        }
     }
 }

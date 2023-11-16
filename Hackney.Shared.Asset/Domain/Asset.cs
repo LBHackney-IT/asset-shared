@@ -1,4 +1,3 @@
-using Hackney.Shared.PatchesAndAreas.Domain;
 using System;
 using System.Collections.Generic;
 
@@ -8,6 +7,8 @@ namespace Hackney.Shared.Asset.Domain
     {
         public Guid Id { get; set; }
         public string AssetId { get; set; }
+        public Guid? AreaId { get; set; }
+        public Guid? PatchId { get; set; }
         public AssetType AssetType { get; set; }
         public RentGroup? RentGroup { get; set; }
         public string RootAsset { get; set; }
@@ -21,8 +22,6 @@ namespace Hackney.Shared.Asset.Domain
         public AssetCharacteristics AssetCharacteristics { get; set; }
         public AssetTenure Tenure { get; set; }
         public int? VersionNumber { get; set; }
-        public List<PatchEntity?> Patches { get; set; }
-
         public static Asset Create(string id,
             string assetId,
             string assetType,
