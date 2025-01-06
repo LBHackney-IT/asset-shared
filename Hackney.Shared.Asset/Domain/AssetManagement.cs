@@ -17,6 +17,8 @@ namespace Hackney.Shared.Asset.Domain
         public string CouncilTaxType { get; set; }
         public string CouncilTaxLiability { get; set; }
         public bool? IsTemporaryAccomodation { get; set; }
+        public bool? IsTemporaryAccommodationBlock { get; set; }
+        public Guid? TemporaryAccommodationParentAssetId { get; set; }
         public bool? ReadyToLetDate { get; set; }
     }
 }
