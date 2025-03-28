@@ -12,7 +12,7 @@ namespace Hackney.Shared.Asset.Boundary.Request.Validation
         {
             RuleFor(x => x.AreaId).NotNull()
                                   .NotEqual(Guid.Empty);
-            
+
             RuleFor(x => x.PatchId).NotNull()
                                   .NotEqual(Guid.Empty);
         }
