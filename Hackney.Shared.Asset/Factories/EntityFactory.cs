@@ -101,7 +101,8 @@ namespace Hackney.Shared.Asset.Factories
                 KitchenNotes = databaseEntity.KitchenNotes,
                 IsStepFree = databaseEntity.IsStepFree,
                 BathroomNotes = databaseEntity.BathroomNotes,
-                LivingRoomNotes = databaseEntity.LivingRoomNotes
+                LivingRoomNotes = databaseEntity.LivingRoomNotes,
+                IsUnderWarranty = databaseEntity.IsUnderWarranty
             };
         }
 
@@ -147,7 +148,8 @@ namespace Hackney.Shared.Asset.Factories
                 KitchenNotes = domainEntity.KitchenNotes,
                 IsStepFree = domainEntity.IsStepFree,
                 BathroomNotes = domainEntity.BathroomNotes,
-                LivingRoomNotes = domainEntity.LivingRoomNotes
+                LivingRoomNotes = domainEntity.LivingRoomNotes,
+                IsUnderWarranty = domainEntity.IsUnderWarranty
             };
         }
         #endregion

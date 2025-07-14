@@ -41,5 +41,6 @@ namespace Hackney.Shared.Asset.Infrastructure
         public bool? IsStepFree { get; set; }
         public string BathroomNotes { get; set; }
         public string LivingRoomNotes { get; set; }
+        public bool? IsUnderWarranty { get; set; }
     }
 }

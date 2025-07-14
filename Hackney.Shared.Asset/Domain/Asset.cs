@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Hackney.Shared.Asset.Domain
 {
@@ -13,7 +12,6 @@ namespace Hackney.Shared.Asset.Domain
         public RentGroup? RentGroup { get; set; }
         public string RootAsset { get; set; }
         public string ParentAssetIds { get; set; }
-
         public string BoilerHouseId { get; set; }
         public bool IsActive { get; set; }
         public AssetLocation AssetLocation { get; set; }

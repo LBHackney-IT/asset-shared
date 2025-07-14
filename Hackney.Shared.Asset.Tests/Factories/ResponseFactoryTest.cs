@@ -94,6 +94,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
             presentationAC.IsStepFree.Should().Be(domainAC.IsStepFree);
             presentationAC.BathroomNotes.Should().Be(domainAC.BathroomNotes);
             presentationAC.LivingRoomNotes.Should().Be(domainAC.LivingRoomNotes);
+            presentationAC.IsUnderWarranty.Should().Be(domainAC.IsUnderWarranty);
         }
 
         [Fact]
