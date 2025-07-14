@@ -5,5 +5,5 @@ clean:
 
 .PHONY: test
 test:
-	-docker-compose build hackney-shared-asset-test && docker-compose run hackney-shared-asset-test
+	-docker compose build hackney-shared-asset-test && docker compose run hackney-shared-asset-test
 	-make clean
