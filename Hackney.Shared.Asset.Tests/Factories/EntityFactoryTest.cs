@@ -156,6 +156,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
             domainAC.IsStepFree.Should().Be(databaseAC.IsStepFree);
             domainAC.BathroomNotes.Should().Be(databaseAC.BathroomNotes);
             domainAC.LivingRoomNotes.Should().Be(databaseAC.LivingRoomNotes);
+            domainAC.IsUnderWarranty.Should().Be(databaseAC.IsUnderWarranty);
         }
 
         [Fact]
@@ -205,6 +206,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
             databaseAC.IsStepFree.Should().Be(domainAC.IsStepFree);
             databaseAC.BathroomNotes.Should().Be(domainAC.BathroomNotes);
             databaseAC.LivingRoomNotes.Should().Be(domainAC.LivingRoomNotes);
+            databaseAC.IsUnderWarranty.Should().Be(domainAC.IsUnderWarranty);
         }
 
         [Fact]
