@@ -9,6 +9,7 @@ namespace Hackney.Shared.Asset.Domain
         public string AddressLine4 { get; set; }
         public string PostCode { get; set; }
         public string PostPreamble { get; set; }
+        public string Neighbourhood { get; set; }
 
         public static AssetAddress Create(string uprn,
             string addressLine1,
@@ -16,7 +17,8 @@ namespace Hackney.Shared.Asset.Domain
             string addressLine3,
             string addressLine4,
             string postCode,
-            string postPreamble)
+            string postPreamble,
+            string neighbourhood)
         {
             return new AssetAddress
             {
@@ -26,7 +28,8 @@ namespace Hackney.Shared.Asset.Domain
                 AddressLine3 = addressLine3,
                 AddressLine4 = addressLine4,
                 PostCode = postCode,
-                PostPreamble = postPreamble
+                PostPreamble = postPreamble,
+                Neighbourhood = neighbourhood
             };
         }
     }

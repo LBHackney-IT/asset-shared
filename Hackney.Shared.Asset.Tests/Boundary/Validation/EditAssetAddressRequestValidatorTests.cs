@@ -115,6 +115,29 @@ namespace Hackney.Shared.Asset.Tests.Boundary.Validation
         [Theory]
         [InlineData(null)]
         [InlineData("")]
+        public void NeighbourhoodShouldNotErrorWithNoValue(string value)
+        {
+            var request = CreateValidRequest();
+            request.AssetAddress.Neighbourhood = value;
+
+            var result = _sut.TestValidate(request);
+            result.ShouldNotHaveValidationErrorFor(x => x.AssetAddress.Neighbourhood);
+        }
+
+        [Fact]
+        public void NeighbourhoodShouldErrorWithXssTags()
+        {
+            var request = CreateValidRequest();
+            request.AssetAddress.Neighbourhood = StringWithTags;
+
+            var result = _sut.TestValidate(request);
+            result.ShouldHaveValidationErrorFor(x => x.AssetAddress.Neighbourhood)
+                .WithErrorCode(ErrorCodes.XssFailure);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
         public void PostCodeShouldErrorWithNoValue(string value)
         {
             var request = CreateValidRequest();
