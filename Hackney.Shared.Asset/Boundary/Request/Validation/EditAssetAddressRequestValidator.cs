@@ -34,6 +34,9 @@ namespace Hackney.Shared.Asset.Boundary.Request.Validation
             RuleFor(x => x.AssetAddress.AddressLine4).NotXssString()
                                          .WithErrorCode(ErrorCodes.XssFailure);
 
+            RuleFor(x => x.AssetAddress.Neighbourhood).NotXssString()
+                                         .WithErrorCode(ErrorCodes.XssFailure);
+
             RuleFor(x => x.AssetAddress.PostCode).NotNull()
                                                  .NotEmpty()
                                                  .WithErrorCode(ErrorCodes.AssetAddressPostcodeEmptyOrInvalid);
