@@ -157,6 +157,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
             domainAC.BathroomNotes.Should().Be(databaseAC.BathroomNotes);
             domainAC.LivingRoomNotes.Should().Be(databaseAC.LivingRoomNotes);
             domainAC.IsUnderWarranty.Should().Be(databaseAC.IsUnderWarranty);
+            domainAC.HealthAndSafetyRatingMessage.Should().Be(databaseAC.HealthAndSafetyRatingMessage);
         }
 
         [Fact]
@@ -207,6 +208,7 @@ namespace Hackney.Shared.Asset.Tests.Factories
             databaseAC.BathroomNotes.Should().Be(domainAC.BathroomNotes);
             databaseAC.LivingRoomNotes.Should().Be(domainAC.LivingRoomNotes);
             databaseAC.IsUnderWarranty.Should().Be(domainAC.IsUnderWarranty);
+            databaseAC.HealthAndSafetyRatingMessage.Should().Be(domainAC.HealthAndSafetyRatingMessage);
         }
 
         [Fact]
