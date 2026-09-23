@@ -42,5 +42,7 @@ namespace Hackney.Shared.Asset.Infrastructure
         public string BathroomNotes { get; set; }
         public string LivingRoomNotes { get; set; }
         public bool? IsUnderWarranty { get; set; }
+        public string HealthAndSafetyRatingMessage { get; set; }
+
     }
 }

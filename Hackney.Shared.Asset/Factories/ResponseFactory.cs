@@ -75,7 +75,8 @@ namespace Hackney.Shared.Asset.Factories
                 IsStepFree = domainEntity.IsStepFree,
                 BathroomNotes = domainEntity.BathroomNotes,
                 LivingRoomNotes = domainEntity.LivingRoomNotes,
-                IsUnderWarranty = domainEntity.IsUnderWarranty
+                IsUnderWarranty = domainEntity.IsUnderWarranty,
+                HealthAndSafetyRatingMessage = domainEntity.HealthAndSafetyRatingMessage
             };
         }
 

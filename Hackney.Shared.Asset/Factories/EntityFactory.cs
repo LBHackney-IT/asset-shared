@@ -54,7 +54,7 @@ namespace Hackney.Shared.Asset.Factories
                 AssetManagement = domain.AssetManagement,
                 AssetCharacteristics = domain.AssetCharacteristics.ToDatabase(),
                 Tenure = domain.Tenure.ToDatabase(),
-                VersionNumber = domain.VersionNumber,
+                VersionNumber = domain.VersionNumber
             };
         }
 
@@ -102,7 +102,8 @@ namespace Hackney.Shared.Asset.Factories
                 IsStepFree = databaseEntity.IsStepFree,
                 BathroomNotes = databaseEntity.BathroomNotes,
                 LivingRoomNotes = databaseEntity.LivingRoomNotes,
-                IsUnderWarranty = databaseEntity.IsUnderWarranty
+                IsUnderWarranty = databaseEntity.IsUnderWarranty,
+                HealthAndSafetyRatingMessage = databaseEntity.HealthAndSafetyRatingMessage,
             };
         }
 
@@ -149,7 +150,8 @@ namespace Hackney.Shared.Asset.Factories
                 IsStepFree = domainEntity.IsStepFree,
                 BathroomNotes = domainEntity.BathroomNotes,
                 LivingRoomNotes = domainEntity.LivingRoomNotes,
-                IsUnderWarranty = domainEntity.IsUnderWarranty
+                IsUnderWarranty = domainEntity.IsUnderWarranty,
+                HealthAndSafetyRatingMessage = domainEntity.HealthAndSafetyRatingMessage
             };
         }
         #endregion
