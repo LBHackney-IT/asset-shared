@@ -1,40 +1,54 @@
 # Hackney.Shared.Asset
-At Hackney, we have created NuGet Packages to prevent the duplication of common code when implementing our APIs.
-This NuGet package will store the shared code related to the asset domain that can then be used in the relevant projects.
 
-## Using the package
-For full details on how to use the package(s) within this repository please read 
-[this wiki page](https://github.com/LBHackney-IT/lbh-core/wiki/Using-the-package(s)-from-the-Hackney.Core-repository).
+`Hackney.Shared.Asset` is a .NET 10 class library containing shared asset-domain types and boundary contracts for Hackney services. It is a library, not a hosted web API.
 
-## Contributing
+## Contents
 
-### Running Tests Locally
-1. Create the `.env` file based on the `.env.sample` and then populate the values for the variable names listed there. To create the `.env` run:
-    ``` sh
-    cp .env.sample .env
-    ```
-2. Run the tests by running:
-    ``` sh
-    make test
-    ```
+- Asset domain models, including address, location, management, characteristics, and tenure.
+- Request and response contract types, plus FluentValidation validators for asset address edits and property patches.
+- Mapping extensions between the asset domain and persistence representations.
+- DynamoDB-mapped persistence models for the `Assets` table, using converters from `Hackney.Core.DynamoDb`.
+- Shared tenure types and persistence models supplied by the Hackney tenure package.
 
-### Automated Versioning
-The pipeline automatically updates the package version number.
+## API endpoints
 
-Any specific version number follows the form `Major.Minor.Patch[-Suffix]`, where the components have the following meanings:
+This repository defines no HTTP server, routes, or API endpoints. Its request and response classes are contracts intended for use by consuming services.
 
-* *Major*: Breaking changes
-* *Minor*: New features, but backward compatible
-* *Patch*: Backwards compatible bug fixes only
-* *Suffix (optional)*: a hyphen followed by a string denoting a pre-release version
+## Data sources
 
-### Branching Strategy
+The library itself does not connect to or query external data sources. Its `Infrastructure` models describe DynamoDB serialization for the `Assets` table; database access is the responsibility of consuming applications. The tenure model includes types from the shared Hackney tenure package.
 
-In order for the pipeline to be able to run automated tests and create preview versions of packages, you must name your branch correctly.
+## Requirements
 
-**Name your branch following the convention of `feature/<some-feature>`.** This will allow the pipeline to work correctly. 
-If all tests pass, a new version of your package will be publised on every commit. You can see published versions of packages [here](https://github.com/orgs/LBHackney-IT/packages?repo_name=asset-shared).
+- .NET 10 SDK for local restore, build, and test commands.
+- Docker with the Docker Compose v2 plugin to run the repository's container-based test target.
+- Access to the Hackney GitHub NuGet feed for restoring the private package dependencies.
 
-All preview versions of packages will have the suffix **`-feat-<branch-name>-<number>`**.
+## Restore and build
 
-This branch name in the package version has a character limit of **12 characters**, so try to name your branch accordingly, otherwise it will be cut off.
+Set `LBHPACKAGESTOKEN` to a GitHub token with access to the Hackney NuGet feed, then run:
+
+```sh
+dotnet restore Hackney.Shared.Asset.sln
+dotnet build Hackney.Shared.Asset.sln
+```
+
+## Run tests
+
+Create the Compose environment file from the sample and populate `LBHPACKAGESTOKEN`:
+
+```sh
+cp .env.sample .env
+```
+
+Then build and run the test container from the repository root:
+
+```sh
+make test
+```
+
+The test project is `Hackney.Shared.Asset.Tests`. The Makefile cleans up exited test containers and dangling images after the test run.
+
+## Package use
+
+The library is published as a NuGet package by the repository's GitHub Actions workflow. See [the Hackney package usage guide](<https://github.com/LBHackney-IT/lbh-core/wiki/Using-the-package(s)-from-the-Hackney.Core-repository>) for consuming packages from the Hackney repository.
